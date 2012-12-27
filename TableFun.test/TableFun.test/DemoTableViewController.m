@@ -82,12 +82,12 @@
     DemoCell *cell = (DemoCell*)[tableView cellForRowAtIndexPath:indexPath];
 //    cell.isNeedOpen = YES;
     if (cell.DemoCellText.frame.size.height == [UITools resizeHeight:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]]) {
+        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [UITools backOriginalLabel:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]];
     }else{
         [UITools resizeLabel:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]];
     }
 //    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 //    [tableView beginUpdates];
 //    [tableView endUpdates];
 //    [tableView reloadRowsAtIndexPaths:indexPath withRowAnimation:NO];
