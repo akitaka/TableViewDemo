@@ -80,7 +80,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DemoCell *cell = (DemoCell*)[tableView cellForRowAtIndexPath:indexPath];
-    cell.isNeedOpen = YES;
+//    cell.isNeedOpen = YES;
     if (cell.DemoCellText.frame.size.height == [UITools resizeHeight:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]]) {
         [UITools backOriginalLabel:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]];
     }else{
