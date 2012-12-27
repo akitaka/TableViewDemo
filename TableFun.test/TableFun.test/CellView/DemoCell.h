@@ -10,6 +10,8 @@
 
 @interface DemoCell : UITableViewCell{
     IBOutlet UILabel *DemoCellText;
+    BOOL isNeedOpen;
 }
 @property (retain, nonatomic) UILabel *DemoCellText;
+@property (nonatomic, assign) BOOL isNeedOpen;
 @end

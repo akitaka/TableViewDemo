@@ -80,15 +80,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DemoCell *cell = (DemoCell*)[tableView cellForRowAtIndexPath:indexPath];
+    cell.isNeedOpen = YES;
     if (cell.DemoCellText.frame.size.height == [UITools resizeHeight:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]]) {
         [UITools backOriginalLabel:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]];
     }else{
         [UITools resizeLabel:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]];
     }
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-//    [tableView reloadData];
-    [tableView beginUpdates];
-    [tableView endUpdates];
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    [tableView beginUpdates];
+//    [tableView endUpdates];
 //    [tableView reloadRowsAtIndexPaths:indexPath withRowAnimation:NO];
 //    [tableView reloadData];
 }
@@ -99,8 +100,12 @@
 //    if (cell.DemoCellText.frame.size.height == [UITools resizeHeight:cell.DemoCellText font:[UIFont systemFontOfSize:17.0f]]){
 //        return 80;
 //    }
-//    return [tableView indexPathForSelectedRow].row == indexPath.row ? 88 : 50;
-    return 50;
+    return [tableView indexPathForSelectedRow].row == indexPath.row ? 88 : 50;
+//    DemoCell *cell = (DemoCell *)[tableView cellForRowAtIndexPath:indexPath];
+//    if (cell.isNeedOpen) {
+//        return 100;
+//    }
+//    return 50;
 }
 
 
