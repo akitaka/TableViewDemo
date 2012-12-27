@@ -10,7 +10,7 @@
 
 @implementation DemoCell
 @synthesize DemoCellText;
-@synthesize isNeedOpen;
+//@synthesize isNeedOpen;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
